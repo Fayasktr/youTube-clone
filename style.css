@@ -40,8 +40,14 @@ html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"
 .sidebar { width:240px; background:transparent; }
 .side-list { list-style:none; display:flex; flex-direction:column; gap:8px; padding:6px; }
 .side-item { display:flex; gap:12px; align-items:center; padding:8px 10px; border-radius:8px; color:#444; cursor:pointer; }
+.side-item:hover{background-color: #908d8d;}
 .side-item i { font-size:18px; width:22px; text-align:center; }
 .side-item.active { background:#f2f2f2; font-weight:600; }
+
+.bg-color{
+  background-color: #fff;
+}
+.bg-color:hover{background-color: #908d8d;}
 
 /* Content & videos */
 .content { flex:1; }
