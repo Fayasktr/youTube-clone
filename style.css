@@ -49,7 +49,7 @@ html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"
 }
 .bg-color:hover{background-color: #908d8d;}
 
-/* Content & videos */
+/* Content &= videos */
 .content { flex:1; }
 .featured { margin-bottom:16px; }
 .videos-grid {
