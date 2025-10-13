@@ -1,0 +1,145 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background: #f9f9f9; color:#111; }
+
+/* Layout */
+.container { display:flex; flex-direction:column; min-height:100vh; }
+.navbar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:10px 16px; background:#fff; border-bottom:1px solid #e6e6e6;
+  position:sticky; top:0; z-index:30;
+}
+
+.menu{
+  background-color: #c0bebe;
+  border-radius: 50%;
+}
+.menu:hover{
+  background-color: #666;
+}
+.nav-left, .nav-center, .nav-right { display:flex; align-items:center; gap:12px; }
+.brand { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; }
+.logo { width:36px; height:24px; object-fit:contain; }
+.brand-text { font-weight:600; letter-spacing:0.2px; }
+
+/* Buttons and icons */
+.icon-btn { background:transparent; border:none; padding:8px; cursor:pointer; font-size:18px; border-radius:6px; }
+.icon-btn:active { transform:translateY(1px); }
+
+/* Search */
+.search-form { display:flex; align-items:center; gap:6px; border:1px solid #e6e6e6; padding:6px 8px; border-radius:8px; background:#fafafa; }
+.search-input { border:none; outline:none; width:280px; font-size:15px; background:transparent; }
+
+/* Avatar */
+.avatar { width:36px; height:36px; border-radius:50%; object-fit:cover; }
+
+/* Main area */
+.main { display:flex; flex:1; gap:24px; padding:20px; }
+
+/* Sidebar */
+.sidebar { width:240px; background:transparent; }
+.side-list { list-style:none; display:flex; flex-direction:column; gap:8px; padding:6px; }
+.side-item { display:flex; gap:12px; align-items:center; padding:8px 10px; border-radius:8px; color:#444; cursor:pointer; }
+.side-item i { font-size:18px; width:22px; text-align:center; }
+.side-item.active { background:#f2f2f2; font-weight:600; }
+
+/* Content & videos */
+.content { flex:1; }
+.featured { margin-bottom:16px; }
+.videos-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:18px;
+}
+
+/* thumb nail */
+.thumb {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .thumb:hover {
+      transform: translateY(-2px); /* moves up */
+      box-shadow: 0 10px 20px rgba(218, 215, 215, 0.3); /* gives lifting feel */
+    }
+
+/* Video card */
+.video-card { background:#fff; border-radius:8px; overflow:hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.thumb { width:100%; height:200px; object-fit:cover; display:block; }
+.video-meta { display:flex; gap:12px; padding:12px; align-items:flex-start; }
+.channel-thumb { width:40px; height:40px; border-radius:50%; object-fit:cover; }
+.video-info { flex:1; }
+.video-title { font-size:15px; margin-bottom:6px; line-height:1.2; text-decoration: none; color: #000000;}
+.channel-name { color:#666; font-size:13px; text-decoration: none; color: #000000;}
+
+/* Footer */
+.footer { padding:10px 16px; color:#666; font-size:14px; text-align:center; }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .videos-grid { grid-template-columns: repeat(2,1fr); }
+  .search-input { width:180px; }
+}
+@media (max-width: 680px) {
+  .main { padding:12px; }
+  .sidebar { display:none; } /* hide by default on small screens */
+  .videos-grid { grid-template-columns: repeat(1,1fr); }
+  .search-input { width:120px; }
+  .nav-center { gap:6px; }
+}
+
+/* 
+.Pos{
+  position: fixed !important; 
+  z-index: 3 !important;
+} */
+
+
+
+
+/* edits after scroll issue */
+
+.main {
+  display: flex;
+  height: calc(100vh - 60px); /* adjust if navbar height changes */
+  overflow: hidden; /* stop double scroll */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  color: white;
+  overflow-y: auto; /* scroll only sidebar */
+  height: 100%;
+  position: sticky;
+  top: 60px; /* align below navbar */
+}
+
+.content {
+  flex-grow: 1;
+  background-color: #f9f9f9;
+  overflow-y: auto; /* scroll content separately */
+  height: 100%;
+  padding: 1rem;
+}
+hr {
+  border: none;                /* remove default border */
+  height: 2px;                 /* set line thickness */
+  background-color: #000000;      /* YouTube style light gray */
+  margin: 8px 0;               /* little spacing top & bottom */
+}
+
+pre{
+  color:rgb(96, 96, 96);
+  font-size: 14px;
+  font-weight: 600;
+}
+p{
+  color:rgb(96, 96, 96);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h3 p{
+  text-decoration: none !important;
+  color: white !important;
+}
