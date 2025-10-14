@@ -33,12 +33,13 @@
     </div>
   </div> -->
 
-  <div class="container-fluid"> 
+  <div class="container-fluid "> 
     <!-- Header / Navbar -->
      <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> -->
        <header class="navbar Pos position-sticky ">
+        <div class="overlay" id="overlay" onclick="hideSidebar()"></div>
          <div class="nav-left ">
-        <button id="menu-btn menu" class="icon-btn"><i class="uil uil-bars"></i></button>
+          <button id="menu-btn" class="icon-btn three-line" onclick="showSidebar()"><i class="uil uil-bars"></i></button>
         <a class="brand" href="#">
           <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="logo" class="logo">
           <span class="brand-text">YouTube</span>
@@ -54,8 +55,8 @@
       </div>
       
       <div class="nav-right">
-        <button class="icon-btn"><i class="uil uil-video-plus"></i></button>
-        <button class="icon-btn"><i class="uil uil-bell"></i></button>
+        <button class="icon-btn" ><i class="uil uil-video-plus"></i></button>
+        <button class="icon-btn" id="bell-icon"><i class="uil uil-bell"></i></button>
         <img class="avatar" src="./images/avatar image.JPG" alt="avatar">
       </div>
     </header>
@@ -210,6 +211,18 @@ new  features
     </section>
   </section>
 </main>
+<script>
+   function showSidebar() {
+  document.querySelector('.sidebar').classList.add('active');
+  document.getElementById('overlay').classList.add('active');
+}
+
+function hideSidebar() {
+  document.querySelector('.sidebar').classList.remove('active');
+  document.getElementById('overlay').classList.remove('active');
+}
+
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="script.js"></script>
 </body>

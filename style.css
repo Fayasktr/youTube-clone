@@ -20,6 +20,11 @@ html{
 .menu:hover{
   background-color: #666;
 }
+
+
+
+
+
 .nav-left, .nav-center, .nav-right { display:flex; align-items:center; gap:12px; }
 .brand { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; }
 .logo { width:36px; height:24px; object-fit:contain; }
@@ -36,6 +41,138 @@ html{
 
 /* Avatar */
 .avatar { width:36px; height:36px; border-radius:50%; object-fit:cover; }
+
+
+
+/* new area for make the navbar responsible */
+
+header.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff; /* YouTube dark bg */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-left, .nav-center, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* spacing between buttons/icons */
+}
+.nav-center {
+    flex: 1;               /* take available space */
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;      /* prevents too wide search bar */
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: none;
+}
+@media (max-width: 992px) { /* below lg screens */
+    .nav-center {
+        display: none; /* hide search bar for smaller screens */
+    }
+}
+
+@media (max-width: 768px) { /* below md screens */
+    .nav-left {
+        flex: 1;
+    }
+
+    .nav-right {
+        gap: 0.3rem;
+    }
+
+    header.navbar {
+        flex-wrap: wrap; /* allow wrapping if needed */
+    }
+}
+#menu-btn {
+    display: none; /* hide on desktop */
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+}
+.nav-center {
+    flex: 1;               /* take available space */
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;      /* prevents it from being too wide */
+}
+
+.search-input {
+    flex: 1;               /* input takes all available space */
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    border: none;
+    min-width: 100px;      /* ensures it doesn’t collapse too small */
+}
+.brand .logo {
+    height: 20px;       /* default height for desktop */
+    width: auto;        /* keep aspect ratio */
+    transition: all 0.3s ease; /* smooth resizing */
+}
+
+@media (max-width: 768px) {
+    .brand .logo {
+        height: 10px;   /* smaller logo on mobile */
+    }
+
+    .brand-text {
+        font-size: 0.9rem; /* shrink the text if needed */
+    }
+}
+@media (max-width: 500px){
+  .brand-text{
+    display: none;
+  }
+}
+@media (max-width: 430px){
+  #search-btn{
+    display: none;
+  }
+  .avatar{
+    display: none;
+  }
+  #mic-btn{
+    display: none;
+  }
+  #bell-icon{
+    display: none;
+  }
+}
+@media (max-width:280px){
+  .logo{
+    display: none;
+  }
+}
+@media (max-width: 240px){
+  .three-line{
+    display: none;
+  }
+}
+
+
+
 
 /* Main area */
 .main { display:flex; flex:1; gap:24px; padding:20px; }
@@ -162,3 +299,47 @@ h3 p{
   text-decoration: none !important;
   color: white !important;
 }
+
+
+
+
+/* click the button then open the sidebar */
+/* Sidebar hidden by default on mobile */
+@media (max-width: 680px) {
+  .sidebar {
+    position: fixed;       /* overlay on top of content */
+    top: 0;
+    left: -250px;          /* hide to the left */
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    z-index: 2000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  }
+
+  /* When sidebar is active / visible */
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Add overlay to dim the rest of screen */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+}
+
+
+
+
