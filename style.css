@@ -27,8 +27,9 @@ html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"
 .icon-btn:active { transform:translateY(1px); }
 
 /* Search */
-.search-form { display:flex; align-items:center; gap:6px; border:1px solid #e6e6e6; padding:6px 8px; border-radius:8px; background:#fafafa; }
+.search-form { display:flex; align-items:center; gap:6px; border:1px solid #e6e6e6; padding:8px 8px; border-radius:8px; background:#fafafa; }
 .search-input { border:none; outline:none; width:280px; font-size:15px; background:transparent; }
+
 
 /* Avatar */
 .avatar { width:36px; height:36px; border-radius:50%; object-fit:cover; }
@@ -39,13 +40,14 @@ html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"
 /* Sidebar */
 .sidebar { width:240px; background:transparent; }
 .side-list { list-style:none; display:flex; flex-direction:column; gap:8px; padding:6px; }
-.side-item { display:flex; gap:12px; align-items:center; padding:8px 10px; border-radius:8px; color:#444; cursor:pointer; }
+.side-item { display:flex; gap:12px; align-items:center; padding:8px 10px; border-radius:8px; color:#444; cursor:pointer; transition: .3s ease;}
 .side-item:hover{background-color: #908d8d;}
 .side-item i { font-size:18px; width:22px; text-align:center; }
 .side-item.active { background:#f2f2f2; font-weight:600; }
 
 .bg-color{
   background-color: #fff;
+  transition:all .3s ease;
 }
 .bg-color:hover{background-color: #908d8d;}
 
@@ -107,7 +109,7 @@ html,body { height: 100%; font-family: system-ui,-apple-system,Segoe UI,Roboto,"
 .main {
   display: flex;
   height: calc(100vh - 60px); /* adjust if navbar height changes */
-  overflow: hidden; /* stop double scroll */
+  overflow: hidden; /*stop double scroll*/
 }
 
 .sidebar {
