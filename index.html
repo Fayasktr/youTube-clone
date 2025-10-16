@@ -12,218 +12,216 @@
 
 
 </head>
+<body>
+  <div class="overlay" id="overlay" onclick="hideSidebar()"></div>
 
-<body class="sidebar-hidden">
-
-  <!-- <div class="yt-navbar p-3 shadow position-fixed z-10">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-4">
-          <button class="btn rounded-circle ">
-            <img src="./images/playlist.png" alt="">
-          </button>
-        </div>
-        <div class="col-md-6">
-
-        </div>
-        <div class="col-md-4">
-
-        </div>
-      </div>
+  <header class="navbar position-sticky">
+    <div class="nav-left">
+      <button class="navbar-toggler d-lg-none" type="button" onclick="toggleSidebar()">
+        <i class="uil uil-bars fs-3"></i>
+      </button>
+      <a class="brand" href="./index.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="logo" class="logo">
+        <span class="brand-text">YouTube</span>
+      </a>
     </div>
-  </div> -->
 
-  <div class="container-fluid "> 
-    <!-- Header / Navbar -->
-     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> -->
-       <header class="navbar Pos position-sticky ">
-        <div class="overlay" id="overlay" onclick="hideSidebar()"></div>
-         <div class="nav-left ">
-          <button id="menu-btn" class="icon-btn three-line" onclick="showSidebar()"><i class="uil uil-bars"></i></button>
-        <a class="brand" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="logo" class="logo">
-          <span class="brand-text">YouTube</span>
-        </a>
-      </div>
-      
-      <div class="nav-center">
-        <form id="search-form " class="search-form rounded-pill " action="" onsubmit="">
-          <input id="search-input" type="search" class="search-input " placeholder="Search" required>
-          <button class="icon-btn" id="search-btn"><i class="uil uil-search "></i></button>
-        </form>
-        <button class="icon-btn" id="mic-btn"><i class="uil uil-microphone"></i></button>
-      </div>
-      
-      <div class="nav-right">
-        <button class="icon-btn" ><i class="uil uil-video-plus"></i></button>
-        <button class="icon-btn" id="bell-icon"><i class="uil uil-bell"></i></button>
-        <img class="avatar" src="./images/avatar image.JPG" alt="avatar">
-      </div>
-    </header>
-  <!-- </nav> -->
+    <div class="nav-center">
+      <form id="search-form" class="search-form rounded-pill">
+        <input id="search-input" type="search" class="search-input" placeholder="Search" required>
+        <button class="icon-btn" id="search-btn" type="submit"><i class="uil uil-search"></i></button>
+      </form>
+      <button class="icon-btn" id="mic-btn"><i class="uil uil-microphone"></i></button>
+    </div>
 
-<main class="main d-flex">
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <ul class="side-list">
-      <li class="side-item active d-flex align-items-center bg-color" ><i class="uil uil-home"></i><span>Home</span></li>
-      <li class="side-item d-flex align-items-center"><i class="uil uil-compass"></i><span>Explore</span></li>
-      <li class="side-item d-flex align-items-center"><i class="uil uil-play-circle"></i><span>Shorts</span></li>
-      <hr >
-      <li class="side-item d-flex align-items-center"><i class="uil uil-history"></i><span>History</span></li>
-      <li class="side-item d-flex align-items-center"><img src="./images/playlist.png" alt=""><span>Playlist</span></li>
-      <li class="side-item d-flex align-items-center"><i class="uil uil-clock"></i><span>Watch later</span></li>
-      <li class="side-item d-flex align-items-center"><img src="./images/yt-removebg-preview.png" style="width: 20px;" alt=""><span>Your videos</span></li>
-      <li class="side-item d-flex align-items-center"><i class="uil uil-thumbs-up"></i><span>Liked</span></li>
-      <li class="side-item d-flex align-items-center"><img src="./images/download.png" style="width: 20px;" alt=""></i><span>Download</span></li>
-      <hr>
-      <li class="side-item d-flex align-items-center"><img src="./images/settings.png" style="width: 20px;" alt=""></i><span>Settings</span></li>
-      <li class="side-item d-flex align-items-center"><img src="./images/question mark.png" style="width: 20px;" alt=""></i><span>Help</span></li>
-      <li class="side-item d-flex align-items-center"><img src="./images/exclamation.png" style="width: 20px;" alt=""></i><span>Sent feedback</span></li>
-      <hr>
-      <!-- <p>About Press Copyright Contact usCreators Advertise Developers</p> -->
-      <pre>
-About  Press  Copyright
-Contact  usCreators 
-Advertise  Developers</pre>
-<pre>
+    <div class="nav-right">
+      <button class="icon-btn"><i class="uil uil-video-plus"></i></button>
+      <button class="icon-btn" id="bell-icon"><i class="uil uil-bell"></i></button>
+      <img class="avatar" src="./images/avatar image.JPG" alt="avatar">
+    </div>
+  </header>
+
+  <main class="main d-flex">
+    <aside class="sidebar">
+      <button class="icon-btn " id="sidebar-close-btn" onclick="hideSidebar()">
+        <i class="uil uil-bars fs-3"></i>
+      </button>
+
+      <ul class="side-list">
+        <li class="side-item active d-flex align-items-center bg-color"><i class="uil uil-home"></i><span>Home</span></li>
+        <li class="side-item d-flex align-items-center"><i class="uil uil-compass"></i><span>Explore</span></li>
+        <li class="side-item d-flex align-items-center"><i class="uil uil-play-circle"></i><span>Shorts</span></li>
+        <hr>
+        <li class="side-item d-flex align-items-center"><i class="uil uil-history"></i><span>History</span></li>
+        <li class="side-item d-flex align-items-center"><img src="./images/playlist.png" alt=""><span>Playlist</span></li>
+        <li class="side-item d-flex align-items-center"><i class="uil uil-clock"></i><span>Watch later</span></li>
+        <li class="side-item d-flex align-items-center"><img src="./images/yt-removebg-preview.png" style="width: 20px;" alt=""><span>Your videos</span></li>
+        <li class="side-item d-flex align-items-center"><i class="uil uil-thumbs-up"></i><span>Liked</span></li>
+        <li class="side-item d-flex align-items-center"><img src="./images/download.png" style="width: 20px;" alt=""></i><span>Download</span></li>
+        <hr>
+        <li class="side-item d-flex align-items-center"><img src="./images/settings.png" style="width: 20px;" alt=""></i><span>Settings</span></li>
+        <li class="side-item d-flex align-items-center"><img src="./images/question mark.png" style="width: 20px;" alt=""></i><span>Help</span></li>
+        <li class="side-item d-flex align-items-center"><img src="./images/exclamation.png" style="width: 20px;" alt=""></i><span>Sent feedback</span></li>
+        <hr>
+        <pre>
+About   Press   Copyright
+Contact   usCreators
+Advertise   Developers</pre>
+        <pre>
 Terms Privacy Policy&Safety
-How YouTube  worksTest  
-new  features
+How YouTube   worksTest
+new   features
 </pre>
         <p>© 2025 Google LLC</p>
-    </ul>
-  </aside>
+      </ul>
+    </aside>
 
-  <!-- Main content -->
-  <section class="content flex-grow-1">
-    <section id="videos" class="videos-grid">
-      <!-- video cards here -->
-       <a href="https://youtu.be/tExc5EOZ1DY?si=AqH-fSp7peBbEf1W">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/image one.jpg" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/image one yt channel photo.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title title">CJ - WHOOPTY (ERS Remix) Baby Driver</h3>
-                   <p class="channel-name title">Mr.Yash officiasl • 165M views •<br> 3 years ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/CMzPj8PVBfY?si=R1IITTBwKsrGUIvz">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/umar abdussalam.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/umar log.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Ai Now Ep 01: The world you knew has already passed.</h3>
-                   <p class="channel-name">Umer Abdussalam • 56K views •<br> 5 days ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/elHOjG8VUwU?si=B0cpGK7R4n7eeq1Y">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/the man.webp" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/ghc channel.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Kerala’s Biggest Coding Institute</h3>
-                   <p class="channel-name">GHC growthlab • 1.4k views •<br> 10 days ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/rwD5AkqRazQ?si=zBpil6c_7Nl5gDnS">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/3CR.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/BROTOTYPE LOG.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">How he became a developer with ₹3,00,00,000 salary!</h3>
-                   <p class="channel-name">BROTOTOYP MALAYALAM • 414K views •<br> 1 year ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/Hf0TVQcEWF8?si=_Vx1yie-3lkeQvuQ">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/ELON MUSK ADVICE.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/billioners.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Elon Musk Advice For Young People | Billionaire Hub</h3>
-                   <p class="channel-name">Billionaires Hub • 18K views •<br> 3 Weeks ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/EUwzWHD3Htg?si=mzmRPaPKBeWE6kWD">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/dragon challenge.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/rangerover.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Range Rover Sport | Dragon Challenge</h3>
-                   <p class="channel-name">Range Rover • 6.55M views •<br> 7 years ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/I6VpZ3bnnKI?si=4GEIX-OSWc0jf99O">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/fly.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/r adventure.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Wingsuit Flying over the Maldives Islands</h3>
-                   <p class="channel-name">R Adventure Media • 15M views •<br> 5 years ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/BrRZZ_8NTkg?si=Ugq0bYePGCRCvXcp">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/train your brain.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/team fearless.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Train Your Brain To Make More Money - John Assaraf</h3>
-                   <p class="channel-name">Team Fearless • 6.6M views •<br> 7 years ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
-           <a href="https://youtu.be/o2aQ3k-oArc?si=tWAzAcrRDqWm4CFt">
-             <article class="video-card ">
-               <img class="thumb rounded-2" src="./images/masthang.avif" alt="thumb">
-               <div class="video-meta">
-                 <img class="channel-thumb" src="./images/xmax.jpg" alt="channel">
-                 <div class="video-info">
-                   <h3 class="video-title ">Serhat Durmus - Hislerim ( Bass Boosted )</h3>
-                   <p class="channel-name">Xmax Music • 82M views •<br> 5 years ago</p>
-                  </div>
-                </div>
-              </article>
-            </a>
+    <section class="content flex-grow-1">
+      <section id="videos" class="videos-grid">
+        <a href="https://youtu.be/tExc5EOZ1DY?si=AqH-fSp7peBbEf1W">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/image one.jpg" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/image one yt channel photo.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title title">CJ - WHOOPTY (ERS Remix) Baby Driver</h3>
+                <p class="channel-name title">Mr.Yash officiasl • 165M views •<br> 3 years ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/CMzPj8PVBfY?si=R1IITTBwKsrGUIvz">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/umar abdussalam.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/umar log.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Ai Now Ep 01: The world you knew has already passed.</h3>
+                <p class="channel-name">Umer Abdussalam • 56K views •<br> 5 days ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/elHOjG8VUwU?si=B0cpGK7R4n7eeq1Y">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/the man.webp" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/ghc channel.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Kerala’s Biggest Coding Institute</h3>
+                <p class="channel-name">GHC growthlab • 1.4k views •<br> 10 days ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/rwD5AkqRazQ?si=zBpil6c_7Nl5gDnS">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/3CR.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/BROTOTYPE LOG.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">How he became a developer with ₹3,00,00,000 salary!</h3>
+                <p class="channel-name">BROTOTOYP MALAYALAM • 414K views •<br> 1 year ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/Hf0TVQcEWF8?si=_Vx1yie-3lkeQvuQ">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/ELON MUSK ADVICE.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/billioners.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Elon Musk Advice For Young People | Billionaire Hub</h3>
+                <p class="channel-name">Billionaires Hub • 18K views •<br> 3 Weeks ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/EUwzWHD3Htg?si=mzmRPaPKBeWE6kWD">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/dragon challenge.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/rangerover.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Range Rover Sport | Dragon Challenge</h3>
+                <p class="channel-name">Range Rover • 6.55M views •<br> 7 years ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/I6VpZ3bnnKI?si=4GEIX-OSWc0jf99O">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/fly.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/r adventure.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Wingsuit Flying over the Maldives Islands</h3>
+                <p class="channel-name">R Adventure Media • 15M views •<br> 5 years ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/BrRZZ_8NTkg?si=Ugq0bYePGCRCvXcp">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/train your brain.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/team fearless.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Train Your Brain To Make More Money - John Assaraf</h3>
+                <p class="channel-name">Team Fearless • 6.6M views •<br> 7 years ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
+        <a href="https://youtu.be/o2aQ3k-oArc?si=tWAzAcrRDqWm4CFt">
+          <article class="video-card">
+            <img class="thumb rounded-2" src="./images/masthang.avif" alt="thumb">
+            <div class="video-meta">
+              <img class="channel-thumb" src="./images/xmax.jpg" alt="channel">
+              <div class="video-info">
+                <h3 class="video-title">Serhat Durmus - Hislerim ( Bass Boosted )</h3>
+                <p class="channel-name">Xmax Music • 82M views •<br> 5 years ago</p>
+              </div>
+            </div>
+          </article>
+        </a>
 
+      </section>
     </section>
-  </section>
-</main>
-<script>
-   function showSidebar() {
-  document.querySelector('.sidebar').classList.add('active');
-  document.getElementById('overlay').classList.add('active');
-}
+  </main>
 
-function hideSidebar() {
-  document.querySelector('.sidebar').classList.remove('active');
-  document.getElementById('overlay').classList.remove('active');
-}
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      const overlay = document.getElementById("overlay");
+      const closeBtn = document.getElementById("sidebar-close-btn"); // Get the internal close button
 
-</script>
+      // Toggle the sidebar and overlay visibility
+      sidebar.classList.toggle('active');
+      overlay.classList.toggle('active');
+
+      // Control the display of the internal close button
+      if (sidebar.classList.contains("active")) {
+        closeBtn.style.display = "block"; // Show the internal close button
+      } else {
+        closeBtn.style.display = "none";  // Hide it
+      }
+    }
+
+    function hideSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const overlay = document.getElementById('overlay');
+      const closeBtn = document.getElementById('sidebar-close-btn'); // Get the internal close button
+
+      // Hide the sidebar and overlay
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+
+      // Always hide the internal close button when sidebar is hidden
+      closeBtn.style.display = 'none';
+    }
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</body>
+  </body>
 </html>

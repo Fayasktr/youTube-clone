@@ -23,8 +23,6 @@ html{
 
 
 
-
-
 .nav-left, .nav-center, .nav-right { display:flex; align-items:center; gap:12px; }
 .brand { display:flex; align-items:center; gap:8px; text-decoration:none; color:inherit; }
 .logo { width:36px; height:24px; object-fit:contain; }
@@ -81,7 +79,7 @@ header.navbar {
 }
 @media (max-width: 992px) { /* below lg screens */
     .nav-center {
-        display: none; /* hide search bar for smaller screens */
+      width: 400px;
     }
 }
 
@@ -147,17 +145,24 @@ header.navbar {
   }
 }
 @media (max-width: 430px){
-  #search-btn{
-    display: none;
-  }
-  .avatar{
-    display: none;
+  
+  .nav-left{
+    width: 45px;
   }
   #mic-btn{
     display: none;
   }
   #bell-icon{
     display: none;
+  }
+  #search-form{
+    width: 160px;
+  }
+  #search-input{
+    width: 60px;
+  }
+  #search-btn{
+    padding-left: 5px;
   }
 }
 @media (max-width:280px){
@@ -227,12 +232,42 @@ header.navbar {
   .videos-grid { grid-template-columns: repeat(2,1fr); }
   .search-input { width:180px; }
 }
+/* Sidebar toggle for mobile */
 @media (max-width: 680px) {
-  .main { padding:12px; }
-  .sidebar { display:none; } /* hide by default on small screens */
-  .videos-grid { grid-template-columns: repeat(1,1fr); }
-  .search-input { width:120px; }
-  .nav-center { gap:6px; }
+  /* This positions the sidebar off-screen by default */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden to the left */
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    z-index: 2000; /* Ensures sidebar is on top of everything */
+    transition: left 0.3s ease; /* Smooth slide animation */
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    overflow-y: auto;
+  }
+
+  /* This class, added by JS, slides the sidebar into view */
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* This styles the background overlay */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000; /* Sits behind the sidebar */
+  }
+
+  .overlay.active {
+    display: block;
+  }
 }
 
 /* 
@@ -262,6 +297,8 @@ header.navbar {
   position: sticky;
   top: 60px; /* align below navbar */
 }
+
+
 
 .content {
   flex-grow: 1;
@@ -343,3 +380,233 @@ h3 p{
 
 
 
+/* sidebar toggle */
+
+@media (max-width: 680px) {
+  .sidebar {
+    position: fixed;   /* overlay on top of content */
+    top: 0;
+    left: -250px;      /* hide to left */
+    height: 100%;
+    width: 250px;
+    background-color: #fff;  /* match your sidebar bg */
+    z-index: 1050;
+    transition: left 0.3s ease;  /* smooth slide */
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0;  /* slide in when active */
+  }
+
+  #overlay {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);  /* the shadow */
+    z-index: 1040;
+  }
+
+  #overlay.active {
+    display: block;
+  }
+}
+
+
+
+
+
+
+/* Navbar General Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 15px;
+}
+
+/* Left, Center, and Right Sections */
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+  max-width: 650px;
+}
+
+/* Brand Logo and Text */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  width: 36px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.brand-text {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  font-size: 20px;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 16px;
+  background: transparent;
+}
+
+#search-btn {
+  border-left: 1px solid #ccc;
+  background-color: #f8f8f8;
+  padding: 8px 20px;
+  border-radius: 0;
+}
+
+/* Icon Buttons and Avatar */
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+
+@media (max-width: 500px) {
+  /* On small mobile screens, hide the brand text */
+  .brand-text {
+    display: none;
+  }
+  .navbar {
+    gap: 8px;
+    padding: 8px 12px;
+  }
+}
+
+
+/* Styling for the new "close" button INSIDE the sidebar */
+#sidebar-close-btn {
+  display: none;      /* Hide this button by default */
+  position: absolute;   /* Position it relative to the sidebar */
+  top: -5px;
+  left: 1px;         /* Align it to the left */
+  font-size: 22px;
+  z-index: 2100;
+}
+
+
+/* Responsive sidebar and overlay logic */
+@media (max-width: 680px) {
+  /* This block should contain the main sidebar control for mobile */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    z-index: 2000;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    overflow-y: auto;
+  }
+
+  .sidebar.active {
+    left: 0; /* Slides into view */
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  .overlay.active {
+    display: block;
+  }
+
+  /*
+    Ensure no conflicting `display: none;` on `.sidebar` here.
+    The `left: -250px;` is what hides it, not `display: none;`
+  */
+  .main { padding: 12px; }
+  .videos-grid { grid-template-columns: repeat(1,1fr); }
+  .search-input { width: 120px; }
+  .nav-center { gap: 6px; }
+}
+
+.side-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px;
+}
+
+/* Find your mobile media query */
+@media (max-width: 680px) {
+  
+  /* ✅ ADD THIS RULE INSIDE THE MEDIA QUERY */
+  .side-list {
+    padding-top: 60px;
+  }
+
+  /* ... (the rest of your mobile sidebar rules like .sidebar, .overlay, etc.) ... */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* ...etc */
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+}
+
+@media (max-width:600px){
+
+}
